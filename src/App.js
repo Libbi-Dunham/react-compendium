@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { getPokemon } from './services/Pokemon';
-import PokeList from './components/PokeList/PokeList';
+import PokemonList from './components/PokemonList/PokemonList';
 import Controls from './components/Controls/Controls';
 import Header from './components/Header/Header';
 
@@ -30,7 +30,7 @@ function App() {
       {!loading && (
         <>
           <Controls query={query} setQuery={setQuery} setLoading={setLoading} />
-          <PokeList pokemon={pokemon} />
+          <PokemonList pokemon={pokemon} />
         </>
       )}
     </div>
