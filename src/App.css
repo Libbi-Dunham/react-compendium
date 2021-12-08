@@ -10,16 +10,16 @@ button {
   font-family: 'PressStart2PRegular';
   font-weight: normal;
   font-style: normal;
-  border-radius: 20%;
   background-color: transparent;
   color: black;
-  text-shadow: 1px 2px 2px black;
+  text-shadow: 1px 2px 2px white;
 }
 
 input {
-  border-radius: 20%;
   width: 100px;
   background-color: #96be8c;
+  color: black;
+  text-shadow: 1px 2px 2px white;
 }
 .App-logo {
   height: 40vmin;
