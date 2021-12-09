@@ -16,7 +16,7 @@ function App() {
       setPokemon(pokemonData.results);
       setTimeout(() => {
         setLoading(false);
-      }, 1000);
+      }, 2000);
     };
     if (loading) {
       fetchData();
