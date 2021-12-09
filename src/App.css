@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-color: #96be8c;
+  background-color: #819595;
   font-family: 'PressStart2PRegular';
   font-weight: normal;
   font-style: normal;
@@ -18,21 +18,23 @@ body {
 p {
   border-radius: 5px;
   margin: 10px;
-  /* background-color: #6b7fd7; */
-  /* border: 2px solid #1282a2; */
+  background-color: #79c99e;
+  border: 2px solid #1282a2;
   padding: 10px;
 }
 
 img {
   width: 150px;
   height: 150px;
-  background-color: #6b7fd7;
-  border: 2px solid #1282a2;
   border-radius: 25px;
   align-content: center;
 }
 
 .sort {
+  background-color: transparent;
+}
+
+.type {
   background-color: transparent;
 }
 
@@ -45,7 +47,7 @@ button {
 
 input {
   width: 100px;
-  background-color: #96be8c;
+  background-color: #819595;
 }
 .App-logo {
   height: 40vmin;

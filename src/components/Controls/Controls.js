@@ -24,7 +24,11 @@ export default function Controls({
         <option value="desc">Descending</option>
         <option value="asc">Ascending</option>
       </select>
-      <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
+      <select
+        className="type"
+        value={selectedType}
+        onChange={(e) => setSelectedType(e.target.value)}
+      >
         <option value="">All</option>
         {types.map((type) => (
           <option key={type} value={type}>
