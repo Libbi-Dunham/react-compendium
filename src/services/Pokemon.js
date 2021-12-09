@@ -1,8 +1,9 @@
-export async function getPokemon(query, sort, selectedType) {
+export async function getPokemon(query, sort, currentPage, selectedType) {
   const params = new URLSearchParams();
   params.set('pokemon', query);
   params.set('sort', 'pokemon');
   params.set('direction', sort);
+  params.set('page', currentPage);
 
   if (selectedType !== 'all') {
     params.set('type', selectedType);

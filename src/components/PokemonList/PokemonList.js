@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function PokemonList({ pokemon }) {
+export default function PokemonList({ pokemon, currentPage, setCurrentPage, setLoading }) {
+  const handleNextPage = () => {
+    setCurrentPage((prevState) => ++prevState);
+    setLoading(true);
+  };
   return (
     <div className="list">
       {pokemon.map((poke) => (
@@ -13,8 +17,14 @@ export default function PokemonList({ pokemon }) {
           Type:2 {poke.type_2}
           <br></br>
           Species: {poke.species_id}
+          <br></br>
+          Attack: {poke.attack}
+          <br></br>
+          Speed: {poke.speed}
         </p>
       ))}
+      <div>Page: {currentPage}</div>
+      <button onClick={handleNextPage}>Next!</button>
     </div>
   );
 }

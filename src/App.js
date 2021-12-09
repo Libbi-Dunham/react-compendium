@@ -12,10 +12,11 @@ function App() {
   const [sort, setSort] = useState('asc');
   const [types, setTypes] = useState([]);
   const [selectedType, setSelectedType] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
-      const pokemonData = await getPokemon(query, sort, selectedType);
+      const pokemonData = await getPokemon(query, sort, currentPage, selectedType);
       setPokemon(pokemonData.results);
       setTimeout(() => {
         setLoading(false);
@@ -24,7 +25,7 @@ function App() {
     if (loading) {
       fetchData();
     }
-  }, [loading, query, sort, selectedType]);
+  }, [loading, query, sort, currentPage, selectedType]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +48,15 @@ function App() {
         setSelectedType={setSelectedType}
       />
       {loading && <span className="loading"></span>}
-      {!loading && <PokemonList pokemon={pokemon} />}
+      {!loading && (
+        <PokemonList
+          pokemon={pokemon}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          loading={loading}
+          setLoading={setLoading}
+        />
+      )}
     </div>
   );
 }
