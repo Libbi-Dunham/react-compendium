@@ -6,20 +6,34 @@ body {
   font-style: normal;
 }
 
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #6b7fd7;
+  padding: 10px;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.sort {
+  background-color: transparent;
+}
+
 button {
   font-family: 'PressStart2PRegular';
   font-weight: normal;
   font-style: normal;
   background-color: transparent;
-  color: black;
-  text-shadow: 1px 2px 2px white;
 }
 
 input {
   width: 100px;
   background-color: #96be8c;
-  color: black;
-  text-shadow: 1px 2px 2px white;
 }
 .App-logo {
   height: 40vmin;

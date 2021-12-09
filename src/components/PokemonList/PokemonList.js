@@ -2,9 +2,12 @@ import React from 'react';
 
 export default function PokemonList({ pokemon }) {
   return (
-    <div>
+    <div className="list">
       {pokemon.map((poke) => (
-        <p key={poke.id}>{poke.pokemon}</p>
+        <p key={poke.id}>
+          {poke.pokemon}
+          <img src={poke.url_image}></img>
+        </p>
       ))}
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Controls({ query, setQuery, setLoading }) {
+export default function Controls({ query, setQuery, setLoading, sort, setSort }) {
   return (
     <div>
       <input
@@ -11,7 +11,11 @@ export default function Controls({ query, setQuery, setLoading }) {
           setQuery(e.target.value);
         }}
       />
-      <button onClick={(e) => setLoading(true)}>Find!</button>
+      <select className="sort" value={sort} onChange={(e) => setSort(e.target.value)}>
+        <option value="desc">Descending</option>
+        <option value="asc">Ascending</option>
+      </select>
+      <button onClick={() => setLoading(true)}>Find!</button>
     </div>
   );
 }

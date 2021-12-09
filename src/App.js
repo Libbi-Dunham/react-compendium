@@ -9,10 +9,11 @@ function App() {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState('');
+  const [sort, setSort] = useState('asc');
 
   useEffect(() => {
     const fetchData = async () => {
-      const pokemonData = await getPokemon(query);
+      const pokemonData = await getPokemon(query, sort);
       setPokemon(pokemonData.results);
       setTimeout(() => {
         setLoading(false);
@@ -21,18 +22,14 @@ function App() {
     if (loading) {
       fetchData();
     }
-  }, [loading, query]);
+  }, [loading, query, sort]);
 
   return (
     <div className="App">
       <Header />
+      <Controls query={query} setQuery={setQuery} setLoading={setLoading} setSort={setSort} />
       {loading && <span className="loading"></span>}
-      {!loading && (
-        <>
-          <Controls query={query} setQuery={setQuery} setLoading={setLoading} />
-          <PokemonList pokemon={pokemon} />
-        </>
-      )}
+      {!loading && <PokemonList pokemon={pokemon} />}
     </div>
   );
 }
