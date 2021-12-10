@@ -9,7 +9,7 @@ export default function PokemonList({ pokemon, currentPage, setCurrentPage, setL
     <div className="list">
       {pokemon.map((poke) => (
         <p key={poke.id}>
-          {poke.pokemon.toUpperCase()}
+          {poke.pokemon}
           <img src={poke.url_image}></img>
           <br></br>
           Type:1 {poke.type_1}
