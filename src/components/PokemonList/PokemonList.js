@@ -24,7 +24,9 @@ export default function PokemonList({ pokemon, currentPage, setCurrentPage, setL
         </p>
       ))}
       <div>Page: {currentPage}</div>
-      <button onClick={handleNextPage}>Next!</button>
+      <button className="next" onClick={handleNextPage}>
+        Next!
+      </button>
     </div>
   );
 }

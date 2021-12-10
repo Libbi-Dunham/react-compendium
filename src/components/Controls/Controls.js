@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, TextField, Select, MenuItem } from '@mui/material';
 
 export default function Controls({
   query,
@@ -11,8 +12,8 @@ export default function Controls({
   types,
 }) {
   return (
-    <div>
-      <input
+    <div className="textfield">
+      <TextField
         type="text"
         placeholder="Find a Pokemon"
         value={query}
@@ -20,23 +21,25 @@ export default function Controls({
           setQuery(e.target.value);
         }}
       />
-      <select className="sort" value={sort} onChange={(e) => setSort(e.target.value)}>
-        <option value="desc">Descending</option>
-        <option value="asc">Ascending</option>
-      </select>
-      <select
+      <Select className="sort" value={sort} onChange={(e) => setSort(e.target.value)}>
+        <MenuItem value="desc">Descending</MenuItem>
+        <MenuItem value="asc">Ascending</MenuItem>
+      </Select>
+      <Select
         className="type"
         value={selectedType}
         onChange={(e) => setSelectedType(e.target.value)}
       >
-        <option value="">All</option>
+        <MenuItem value="all">All</MenuItem>
         {types.map((type) => (
-          <option key={type} value={type}>
+          <MenuItem key={type} value={type}>
             {type}
-          </option>
+          </MenuItem>
         ))}
-      </select>
-      <button onClick={() => setLoading(true)}>Find!</button>
+      </Select>
+      <Button style={{ backgroundColor: '#79c99e' }} onClick={() => setLoading(true)}>
+        Find!
+      </Button>
     </div>
   );
 }
