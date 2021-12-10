@@ -8,7 +8,7 @@ export default function PokemonList({ pokemon, currentPage, setCurrentPage, setL
   return (
     <div className="list">
       {pokemon.map((poke) => (
-        <p key={poke.id}>
+        <p className="poke" key={poke.id}>
           {poke.pokemon}
           <img src={poke.url_image}></img>
           <br></br>

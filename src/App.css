@@ -5,7 +5,9 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-
+.poke {
+  text-transform: uppercase;
+}
 .next {
   color: black;
   text-shadow: 1px 2px 2px #1282a2;
